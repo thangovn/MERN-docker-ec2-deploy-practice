@@ -8,7 +8,7 @@ WORKDIR /usr/src/nodejs/
 
 # install app dependencies
 COPY package.json .
-RUN npm install
+RUN yarn install
 
 # copy app source to destination container
 COPY . .
@@ -16,4 +16,4 @@ COPY . .
 # expose container port
 EXPOSE 80
 
-CMD npm start
+CMD yarn start

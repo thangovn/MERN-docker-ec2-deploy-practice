@@ -6,15 +6,15 @@ WORKDIR /usr/src/app/
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY package.json .
-RUN npm install
-RUN npm install react-scripts@4.0.1 -g
+RUN yarn install
+RUN yarn install react-scripts@4.0.1 -g
 
 COPY . .
 
 #Expose port and start application
 # EXPOSE 3000
 # CMD ["npm", "start"]
-RUN npm run build
+RUN yarn run build
 
 # production environment
 # FROM ngnix
